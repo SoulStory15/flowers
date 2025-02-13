@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Flower Facts</title>
+    <style>
+        /* Basic styling for the body to center content and set background color */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f8ff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        /* Styling for the container to center text and add visual effects */
+        .container {
+            text-align: center;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Styling for the button with hover effect */
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        /* Change button color on hover */
+        button:hover {
+            background-color: #45a049;
+        }
+
+        /* Styling for the fact display area */
+        #factDisplay {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Random Flower Facts</h1>
+        <!-- Button to trigger the display of a random fact -->
+        <button id="factButton">Show me a fact!</button>
+        <!-- Placeholder for displaying the random fact -->
+        <p id="factDisplay"></p>
+    </div>
+    <script>
+        // Array containing flower facts
+        const facts = [
+            "There are over 400,000 species of flowering plants in the world.",
+            "The largest flower in the world is the Rafflesia arnoldii, which can grow up to 3 feet in diameter.",
+            "Tulips were once more valuable than gold in 17th century Holland during the period known as 'Tulip Mania'.",
+            "Sunflowers can grow up to 12 feet tall and are known for their ability to track the sun's movement across the sky.",
+            "The world's oldest flower, discovered in China, is believed to be over 125 million years old.",
+            "The Titan Arum, also known as the 'corpse flower', is famous for its strong odor resembling that of a decaying animal.",
+            "Dandelions are not just weeds; they are also a source of food and medicine.",
+            "The rose is the national flower of the United States, the United Kingdom, and the Maldives.",
+            "Orchids can live up to 100 years, making them one of the longest-living flowers.",
+            "Lotus flowers can regulate their temperature, similar to warm-blooded animals."
+        ];
+
+        // Add event listener to the button to display a random fact on click
+        document.getElementById('factButton').addEventListener('click', () => {
+            // Generate a random index to select a fact
+            const randomIndex = Math.floor(Math.random() * facts.length);
+            // Display the selected fact in the factDisplay element
+            document.getElementById('factDisplay').textContent = facts[randomIndex];
+        });
+    </script>
+</body>
+</html>
